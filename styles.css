@@ -1,95 +1,262 @@
- *{
+* {
     font-family: "Gilroy";
-    margin :0;
-    padding : 0;
-    box-sizing : border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
- }
+html, body {
+    width: 100%;
+    height: 100%;
+}
 
- html,body{
-
-    width :100%;
-    height :100%;
- }
- #main {
-    display:flex;
+#main {
+    display: flex;
     align-items: center;
     justify-content: center;
-    width :100%;
-    height : 100%;
-    background-color:  rgb(130, 197, 130); 
- }
- #panel{
+    width: 100%;
+    height: 100%;
+    background-color: #282c34; /* Dark background for better contrast */
+}
+
+#panel {
     overflow: hidden;
-     width :80%;
-     height : 80%;
-     background-color: #fff;
-     border-radius:10px;
- }
- .elem{
+    width: 80%;
+    height: 80%;
+    background-color: #1b1e23;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #ff6ec7; /* Pink shadow */
+}
+
+.elem {
     display: flex;
     align-items: center;
     gap: 20px;
-   
-   
+}
 
-  
-   
- }
- #ptop{
-   padding: 0px 30%;
+#ptop {
+    padding: 0 10%;
     justify-content: space-between;
-   
     align-items: center;
     display: flex;
-    color:#fff;
-     width :100%;
-     height : 100px;
-     background-color: rgb(80, 142, 80);
-    
- }
- .box{
+    color: #ff6ec7; /* Pink text */
+    width: 100%;
+    height: 100px;
+    background-color: #0e153a; /* Dark blue background */
+    border-bottom: 2px solid #ff6ec7;
+}
 
-
-    padding : 10px 20px;
-    background-color: #fff;
+.box {
+    padding: 10px 20px;
+    background-color: #212738;
     border-radius: 5px;
     font-weight: 600;
-        font-size: 23px;
-        color: rgb(86, 167, 86);
-        border-radius: 5px;
- }
- .elem h2{
+    font-size: 1.5rem;
+    color: #ff6ec7; /* Pink text */
+    border: 2px solid #ff6ec7;
+}
 
-        font-size: 20px;
-        font-weight: 600;
- }
- #pbtm{
+.elem h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ff6ec7; /* Pink text */
+}
+
+#pbtm {
     flex-wrap: wrap;
     display: flex;
     padding: 20px;
-   width : 100%;
-   height: calc(100% - 100px);
+    width: 100%;
+    height: calc(100% - 100px);
     gap: 20px;
     align-items: center;
-   justify-content: center;
-   } 
- 
- .bubble{
-  
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        background-color: rgb(86, 167, 86);
-        color: #fff;
-        border-radius: 60%;
-        font-weight: 500;
-        font-size: 20px;
- }
- .bubble:hover{
+    justify-content: center;
+    background-color: #1e3d59; /* Dark teal background */
+}
 
-    background-color: rgb(44, 99, 44);
+.bubble {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: #1b1e23; /* Dark text */
+    border-radius: 50%;
+    font-weight: 500;
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px, 0 0 20px, 0 0 30px; /* Empty shadows to be set individually */
+}
+
+/* Define neon colors */
+.bubble:nth-child(4n+1) {
+    background-color: #16c79a; /* Neon green */
+    box-shadow: 0 0 10px #16c79a, 0 0 20px #13a682, 0 0 30px #119570;
+}
+
+.bubble:nth-child(4n+2) {
+    background-color: #ff6ec7; /* Neon pink */
+    box-shadow: 0 0 10px #ff6ec7, 0 0 20px #ff3ba7, 0 0 30px #ff0099;
+}
+
+.bubble:nth-child(4n+3) {
+    background-color: #ffcc00; /* Neon yellow */
+    box-shadow: 0 0 10px #ffcc00, 0 0 20px #ffb700, 0 0 30px #ffa500;
+}
+
+.bubble:nth-child(4n+4) {
+    background-color: #00d2ff; /* Neon blue */
+    box-shadow: 0 0 10px #00d2ff, 0 0 20px #00bfff, 0 0 30px #00acee;
+}
+
+.bubble:hover {
+    transform: scale(1.1);
     cursor: pointer;
- }
+}
+
+/* Hover effects */
+.bubble:nth-child(4n+1):hover {
+    background-color: #13a682;
+    box-shadow: 0 0 10px #16c79a, 0 0 20px #13a268, 0 0 30px #119570;
+}
+
+.bubble:nth-child(4n+2):hover {
+    background-color: #ff3ba7;
+    box-shadow: 0 0 10px #ff6ec7, 0 0 20px #ff3ba7, 0 0 30px #ff0099;
+}
+
+.bubble:nth-child(4n+3):hover {
+    background-color: #ffb700;
+    box-shadow: 0 0 10px #ffcc00, 0 0 20px #ffb700, 0 0 30px #ffa500;
+}
+
+.bubble:nth-child(4n+4):hover {
+    background-color: #00bfff;
+    box-shadow: 0 0 10px #00d2ff, 0 0 20px #00bfff, 0 0 30px #00acee;
+}
+
+@media (max-width: 1024px) {
+    #panel {
+        width: 90%;
+        height: 70%;
+    }
+
+    .box {
+        font-size: 1.25rem;
+    }
+
+    .elem h2 {
+        font-size: 1rem;
+    }
+
+    .bubble {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #panel {
+        width: 90%;
+        height: 60%;
+    }
+
+    #ptop {
+        height: 80px;
+        padding: 0 5%;
+    }
+
+    .box {
+        font-size: 1rem;
+    }
+
+    .elem h2 {
+        font-size: 0.875rem;
+    }
+
+    .bubble {
+        width: 30px;
+        height: 30px;
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #panel {
+        width: 95%;
+        height: 50%;
+    }
+
+    #ptop {
+        height: 60px;
+        padding: 0 2%;
+    }
+
+    .box {
+        font-size: 0.875rem;
+        padding: 8px 15px;
+    }
+
+    .elem h2 {
+        font-size: 0.75rem;
+    }
+
+    .bubble {
+        width: 25px;
+        height: 25px;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 360px) {
+    #panel {
+        width: 100%;
+        height: 45%;
+    }
+
+    #ptop {
+        height: 50px;
+        padding: 0 1%;
+    }
+
+    .box {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
+
+    .elem h2 {
+        font-size: 0.625rem;
+    }
+
+    .bubble {
+        width: 20px;
+        height: 20px;
+        font-size: 0.625rem;
+    }
+}
+  /* Styling for the game over container */
+  .game-over-container {
+     text-align: center;
+     background-color: #1b1e23;
+     padding: 20px;
+     border-radius: 10px;
+     box-shadow: 0 0 20px #ff6ec7;
+     /* Pink shadow */
+     color: #ffcc00;
+     /* Neon yellow text */
+  }
+
+  .game-over-container h1 {
+     margin: 20px 0;
+     font-size: 2rem;
+     font-weight: 600;
+     text-shadow: 0 0 10px #ff6ec7, 0 0 20px #ff3ba7, 0 0 30px #ff0099;
+  }
+
+  /* Additional styling for other elements */
+  .game-over-container div {
+     margin: 10px 0;
+  }
+
+ 

@@ -1,10 +1,18 @@
 var timer =60;
-var score =0;
+var score = 0;
 var hitrn = 0;
  function increaseScore(){
 
-  score += 10;
- document.querySelector('#scoreval').textContent = score;
+ score+=10;
+
+document.querySelector('#scoreval').textContent =  score ;
+
+
+ 
+
+
+   
+  
 
   };
 function makeBubble(){
@@ -31,9 +39,49 @@ function runTimer(){
      else{
 
         clearInterval(timerint);// i did this bcz withouting clearing the time interval in background it will be run  randomly and it will take space... so for managing the memory soace i use this else option.. nothing else..
-        document.querySelector("#pbtm").innerHTML =`<h1>Game Over</h1>
-        `
+        document.querySelector("#pbtm").innerHTML =`
+        
+        
+        
+         <div class="game-over-container">
+                <div><h1>Game Over</h1></div>
+                <div><h1>Your Score is: ${score}</h1></div>
+                <div><h1>  Best Of Luck For Next Time</h1></div>
+                <button id="reloadButton">Play Again</button>
+            </div>
+            <style>
+                     #reloadButton{
+                           padding:10px;
+                           border-radius :10px;
+                           font-family: "Gilroy";
+                           font-weight:700;
+                           text:15px;
+                           margin: 20px 0;
+     font-size: 2rem;
+     font-weight: 600;
+   //   text-shadow: 0 0 10px #ff6ec7, 0 0 20px #ff3ba7, 0 0 30px #ff0099;
+      text-align: center;
+     background-color: #1b1e23;
+   
+     border-radius: 10px;
+     box-shadow: 0 0 20px #13a682;
+     /* Pink shadow */
+     color: #00d2ff;
+     /* Neon yellow text */
+
+                     }
+            
+            </style>
+
+            
+      `
+      ;
+        document.getElementById('reloadButton').addEventListener('click', function() {
+            location.reload(); // Reload the page
+        });
+      
      }
+     
         document.querySelector("#runtimeval").textContent=timer;
     },1000);
 
