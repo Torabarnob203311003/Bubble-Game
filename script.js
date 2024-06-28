@@ -1,4 +1,12 @@
 var timer =60;
+var score =0;
+ function increaseScore(){
+
+  score += 10;
+ document.querySelector('#scoreval').textContent = score;
+
+  };
+
 function makeBubble(){
 
 
@@ -13,6 +21,8 @@ for( i=1;i<=160; i++){
 
 document.querySelector('#pbtm').innerHTML =clutter
 }
+
+ 
 
 
 function runTimer(){
@@ -41,7 +51,9 @@ function getNewhit(){
 
 
 
+
 runTimer();
 
 makeBubble();
 getNewhit();
+increaseScore();
